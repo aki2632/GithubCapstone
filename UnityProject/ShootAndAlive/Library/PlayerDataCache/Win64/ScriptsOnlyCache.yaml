@@ -2,10 +2,13 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AudioManager
+    - Coin
     - Enemy
     - EnemySpawner
     - GameManager
     - Gun
+    - HealthPack
+    - ItemSpawner
     - LevelUp
     - PlayerHealth
     - PlayerInput
@@ -13,6 +16,7 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - PlayerShooter
     - ResolutionManager
+    - Rotator
     - Stat
     - StatData
     - Title
@@ -27,6 +31,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -251,6 +256,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3128}
     - Class: 114
+      Script: {instanceID: 3154}
+    - Class: 114
       Script: {instanceID: 3158}
     - Class: 114
       Script: {instanceID: 3250}
@@ -265,7 +272,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3842}
     - Class: 114
+      Script: {instanceID: 3886}
+    - Class: 114
+      Script: {instanceID: 3932}
+    - Class: 114
       Script: {instanceID: 3998}
+    - Class: 114
+      Script: {instanceID: 4068}
     - Class: 114
       Script: {instanceID: 4076}
     - Class: 114
@@ -297,6 +310,8 @@ ScriptsOnlyBuild:
     - Class: 120
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
