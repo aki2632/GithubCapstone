@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     // 경험치와 레벨 관련 변수 추가
     public int level=0;
     public int exp=0;
-    public int[] nextExp = { 10, 30, 60, 100, 150, 210, 280, 360, 450, 600 }; // 다음 레벨에 필요한 경험치
+    public int[] nextExp = { 10, 30, 50, 70, 90, 110, 130, 150, 170, 190, 210, 230, 250, 270 }; // 다음 레벨에 필요한 경험치
     public LevelUp uiLevelUp;
 
     private void Awake()
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameover)
         {
-            exp += 50;
+            exp += 10;
 
             // 경험치가 다음 레벨에 필요한 경험치와 같거나 더 많아지면 레벨 증가
             if (exp >= nextExp[level - 1])

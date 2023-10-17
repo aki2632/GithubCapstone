@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerShooter : MonoBehaviour
-{
+public class PlayerShooter : MonoBehaviour {
     public Gun gun; // 사용할 총
     public Transform gunPivot; // 총 배치의 기준점
     public Transform leftHandMount; // 총의 왼쪽 손잡이, 왼손이 위치할 지점
