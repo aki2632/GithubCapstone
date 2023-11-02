@@ -70,73 +70,77 @@ public class EnemyPun : LivingEntityPun
 
     private void Start()
     {
-        // 호스트가 아니라면 AI의 추적 루틴을 실행하지 않음
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            return;
-        }
-
         // 게임 오브젝트 활성화와 동시에 AI의 추적 루틴 시작
         StartCoroutine(UpdatePath());
     }
 
     private void Update()
     {
-        // 호스트가 아니라면 애니메이션의 파라미터를 직접 갱신하지 않음
-        // 호스트가 파라미터를 갱신하면 클라이언트들에게 자동으로 전달되기 때문.
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            return;
-        }
-
-        // 추적 대상의 존재 여부에 따라 다른 애니메이션을 재생
-        enemyAnimator.SetBool("HasTarget", hasTarget);
+        // 추적 대상의 존재 여부에 상관없이 애니메이션 파라미터 갱신
+        UpdateAnimationParameters();
     }
+
+    // 애니메이션 파라미터 갱신 메서드
+    private void UpdateAnimationParameters()
+    {
+        if (enemyAnimator != null)
+        {
+            // 추적 대상의 존재 여부에 따라 다른 애니메이션을 재생
+            enemyAnimator.SetBool("HasTarget", hasTarget);
+        }
+    }
+
 
     // 주기적으로 추적할 대상의 위치를 찾아 경로를 갱신
     private IEnumerator UpdatePath()
     {
-        // 살아있는 동안 무한 루프
         while (!dead)
         {
-            if (hasTarget)
-            {
-                // 추적 대상 존재 : 경로를 갱신하고 AI 이동을 계속 진행
-                pathFinder.isStopped = false;
-                pathFinder.SetDestination(targetEntityPun.transform.position);
-            }
-            else
-            {
-                // 추적 대상 없음 : AI 이동 중지
-                pathFinder.isStopped = true;
+            pathFinder.isStopped = true;
 
-                // 20 유닛의 반지름을 가진 가상의 구를 그렸을때, 구와 겹치는 모든 콜라이더를 가져옴
-                // 단, targetLayers에 해당하는 레이어를 가진 콜라이더만 가져오도록 필터링
-                Collider[] colliders =
-                    Physics.OverlapSphere(transform.position, 20f, whatIsTarget);
+            // 가장 가까운 살아있는 플레이어와의 거리 및 추적 대상을 저장할 변수
+            float closestDistance = float.MaxValue;
+            LivingEntityPun closestPlayer = null;
 
-                // 모든 콜라이더들을 순회하면서, 살아있는 플레이어를 찾기
-                for (int i = 0; i < colliders.Length; i++)
+            // 모든 플레이어를 순회하면서 가장 가까운 살아있는 플레이어 찾기
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 20f, whatIsTarget);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                LivingEntityPun livingEntityPun = colliders[i].GetComponent<LivingEntityPun>();
+
+                if (livingEntityPun != null && !livingEntityPun.dead)
                 {
-                    // 콜라이더로부터 LivingEntity 컴포넌트 가져오기
-                    LivingEntityPun livingEntityPun = colliders[i].GetComponent<LivingEntityPun>();
+                    // 현재 플레이어와의 거리 계산
+                    float distanceToPlayer = Vector3.Distance(transform.position, livingEntityPun.transform.position);
 
-                    // LivingEntity 컴포넌트가 존재하며, 해당 LivingEntity가 살아있다면,
-                    if (livingEntityPun != null && !livingEntityPun.dead)
+                    if (distanceToPlayer < closestDistance)
                     {
-                        // 추적 대상을 해당 LivingEntity로 설정
-                        targetEntityPun = livingEntityPun;
-
-                        // for문 루프 즉시 정지
-                        break;
+                        closestDistance = distanceToPlayer;
+                        closestPlayer = livingEntityPun;
                     }
                 }
             }
 
-            // 0.25초 주기로 처리 반복
+            // 가장 가까운 플레이어를 추적 대상으로 설정
+            targetEntityPun = closestPlayer;
+
+            // 추적 대상이 존재하면 이동을 재개
+            if (targetEntityPun != null)
+            {
+                pathFinder.isStopped = false;
+                pathFinder.SetDestination(targetEntityPun.transform.position);
+            }
+
+            // 추적 대상이 없거나 적이 죽었을 경우, 추적 대상 해제
+            if (targetEntityPun == null || targetEntityPun.dead)
+            {
+                targetEntityPun = null;
+            }
+
             yield return new WaitForSeconds(0.25f);
         }
     }
+
 
 
     // 데미지를 입었을때 실행할 처리

@@ -5,6 +5,7 @@ using UnityEngine.UI; // UI 관련 코드
 // 플레이어 캐릭터의 생명체로서의 동작을 담당
 public class PlayerHealthPun : LivingEntityPun {
     public Slider healthSlider; // 체력을 표시할 UI 슬라이더
+    public Slider healthUI; // 체력을 표시할 HUD UI 슬라이더
 
     public AudioClip deathClip; // 사망 소리
     public AudioClip hitClip; // 피격 소리
@@ -23,18 +24,30 @@ public class PlayerHealthPun : LivingEntityPun {
 
         playerMovementPun = GetComponent<PlayerMovementPun>();
         playerShooterPun = GetComponent<PlayerShooterPun>();
+
+        // 슬라이더 할당
+        healthUI = GameObject.Find("Health UI").GetComponent<Slider>();
     }
 
     protected override void OnEnable() {
         // LivingEntity의 OnEnable() 실행 (상태 초기화)
         base.OnEnable();
 
+        // Canvas
         // 체력 슬라이더 활성화
         healthSlider.gameObject.SetActive(true);
         // 체력 슬라이더의 최대값을 기본 체력값으로 변경
         healthSlider.maxValue = startingHealth;
         // 체력 슬라이더의 값을 현재 체력값으로 변경
         healthSlider.value = health;
+
+        // HUD Canvas
+        // 체력 슬라이더 활성화
+        healthUI.gameObject.SetActive(true);
+        // 체력 슬라이더의 최대값을 기본 체력값으로 변경
+        healthUI.maxValue = startingHealth;
+        // 체력 슬라이더의 값을 현재 체력값으로 변경
+        healthUI.value = health;
 
         // 플레이어 조작을 받는 컴포넌트들 활성화
         playerMovementPun.enabled = true;
@@ -46,8 +59,12 @@ public class PlayerHealthPun : LivingEntityPun {
     public override void RestoreHealth(float newHealth) {
         // LivingEntity의 RestoreHealth() 실행 (체력 증가)
         base.RestoreHealth(newHealth);
+
         // 체력 갱신
+        // Canvas
         healthSlider.value = health;
+        // HUD Canvas
+        healthUI.value = health;
     }
 
 
@@ -65,6 +82,7 @@ public class PlayerHealthPun : LivingEntityPun {
         base.OnDamage(damage, hitPoint, hitDirection);
         // 갱신된 체력을 체력 슬라이더에 반영
         healthSlider.value = health;
+        healthUI.value = health;
     }
 
     public override void Die() {
@@ -83,9 +101,6 @@ public class PlayerHealthPun : LivingEntityPun {
         // 플레이어 조작을 받는 컴포넌트들 비활성화
         playerMovementPun.enabled = false;
         playerShooterPun.enabled = false;
-
-        // 5초 뒤에 리스폰
-        Invoke("Respawn", 5f);
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -111,25 +126,5 @@ public class PlayerHealthPun : LivingEntityPun {
                 playerAudioPlayer.PlayOneShot(itemPickupClip);
             }
         }
-    }
-
-    // 부활 처리
-    public void Respawn() {
-        // 로컬 플레이어만 직접 위치를 변경 가능
-        if (photonView.IsMine)
-        {
-            // 원점에서 반경 5유닛 내부의 랜덤한 위치 지정
-            Vector3 randomSpawnPos = Random.insideUnitSphere * 5f;
-            // 랜덤 위치의 y값을 0으로 변경
-            randomSpawnPos.y = 0f;
-
-            // 지정된 랜덤 위치로 이동
-            transform.position = randomSpawnPos;
-        }
-
-        // 컴포넌트들을 리셋하기 위해 게임 오브젝트를 잠시 껐다가 다시 켜기
-        // 컴포넌트들의 OnDisable(), OnEnable() 메서드가 실행됨
-        gameObject.SetActive(false);
-        gameObject.SetActive(true);
     }
 }

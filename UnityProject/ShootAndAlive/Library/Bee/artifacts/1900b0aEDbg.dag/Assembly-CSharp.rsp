@@ -416,6 +416,7 @@
 "Assets/Scripts/PlayerInput.cs"
 "Assets/Scripts/PlayerInputPun.cs"
 "Assets/Scripts/PlayerLevel.cs"
+"Assets/Scripts/PlayerLevelPun.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/PlayerMovementPun.cs"
 "Assets/Scripts/PlayerShooter.cs"

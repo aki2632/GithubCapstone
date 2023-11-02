@@ -32,22 +32,24 @@ public class GameManagerPun : MonoBehaviourPunCallbacks, IPunObservable {
     public LevelUp uiLevelUp;
 
     // 주기적으로 자동 실행되는, 동기화 메서드
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        // 로컬 오브젝트라면 쓰기 부분이 실행됨
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
         if (stream.IsWriting)
         {
-            // 네트워크를 통해 score 값을 보내기
+            // score, level, exp 값을 네트워크로 보내기
             stream.SendNext(score);
+            stream.SendNext(level);
+            stream.SendNext(exp);
         }
         else
         {
-            // 리모트 오브젝트라면 읽기 부분이 실행됨         
-
-            // 네트워크를 통해 score 값 받기
+            // 네트워크에서 score, level, exp 값을 받기
             score = (int)stream.ReceiveNext();
-            // 동기화하여 받은 점수를 UI로 표시
+            level = (int)stream.ReceiveNext();
+            exp = (int)stream.ReceiveNext();
+
+            // 동기화하여 받은 값을 UI로 업데이트
             UIManager.instance.UpdateScoreText(score);
+            // level 및 exp 업데이트 UI 로직 추가
         }
     }
 
@@ -70,6 +72,9 @@ public class GameManagerPun : MonoBehaviourPunCallbacks, IPunObservable {
         // 네트워크 상의 모든 클라이언트들에서 생성 실행
         // 단, 해당 게임 오브젝트의 주도권은, 생성 메서드를 직접 실행한 클라이언트에게 있음
         PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
+
+        // 플레이어가 사망했을 때 처리할 메서드 등록
+        FindObjectOfType<PlayerHealthPun>().onDeath += EndGame;
     }
 
     private void Update()
@@ -114,6 +119,7 @@ public class GameManagerPun : MonoBehaviourPunCallbacks, IPunObservable {
     // 룸을 나갈때 자동 실행되는 메서드
     public override void OnLeftRoom()
     {
+        PhotonNetwork.LeaveRoom();
         // 룸을 나가면 로비 씬으로 돌아감
         SceneManager.LoadScene("Lobby");
     }

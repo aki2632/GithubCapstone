@@ -69,4 +69,10 @@ public class UIManager : MonoBehaviour {
         Time.timeScale = 1f;
     }
 
+    // 방 떠나기
+    public void LeaveRoom()
+    {
+        GameManagerPun.instance.OnLeftRoom();
+    }
+
 }
