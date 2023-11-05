@@ -4,7 +4,6 @@ using UnityEngine.UI; // UI 관련 코드
 
 // 플레이어 캐릭터의 생명체로서의 동작을 담당
 public class PlayerHealthPun : LivingEntityPun {
-    public Slider healthSlider; // 체력을 표시할 UI 슬라이더
     public Slider healthUI; // 체력을 표시할 HUD UI 슬라이더
 
     public AudioClip deathClip; // 사망 소리
@@ -33,14 +32,6 @@ public class PlayerHealthPun : LivingEntityPun {
         // LivingEntity의 OnEnable() 실행 (상태 초기화)
         base.OnEnable();
 
-        // Canvas
-        // 체력 슬라이더 활성화
-        healthSlider.gameObject.SetActive(true);
-        // 체력 슬라이더의 최대값을 기본 체력값으로 변경
-        healthSlider.maxValue = startingHealth;
-        // 체력 슬라이더의 값을 현재 체력값으로 변경
-        healthSlider.value = health;
-
         // HUD Canvas
         // 체력 슬라이더 활성화
         healthUI.gameObject.SetActive(true);
@@ -61,8 +52,6 @@ public class PlayerHealthPun : LivingEntityPun {
         base.RestoreHealth(newHealth);
 
         // 체력 갱신
-        // Canvas
-        healthSlider.value = health;
         // HUD Canvas
         healthUI.value = health;
     }
@@ -81,7 +70,6 @@ public class PlayerHealthPun : LivingEntityPun {
         // LivingEntity의 OnDamage() 실행(데미지 적용)
         base.OnDamage(damage, hitPoint, hitDirection);
         // 갱신된 체력을 체력 슬라이더에 반영
-        healthSlider.value = health;
         healthUI.value = health;
     }
 
@@ -90,7 +78,7 @@ public class PlayerHealthPun : LivingEntityPun {
         base.Die();
 
         // 체력 슬라이더 비활성화
-        healthSlider.gameObject.SetActive(false);
+        healthUI.gameObject.SetActive(false);
 
         // 사망음 재생
         playerAudioPlayer.PlayOneShot(deathClip);

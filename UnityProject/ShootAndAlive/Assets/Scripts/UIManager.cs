@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour {
 
     // 적 웨이브 텍스트 갱신
     public void UpdateWaveText(int waves, int count) {
-        waveText.text = "Wave : " + waves + "\nEnemy Left : " + count;
+        waveText.text = "Wave : " + waves + "\nEnemy : " + count;
     }
 
     // 게임 오버 UI 활성화

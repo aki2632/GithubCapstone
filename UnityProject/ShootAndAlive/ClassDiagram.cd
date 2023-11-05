@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AudioManager" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEIAAAAACABAAAAQAACAgACAAAAAAAAAAAAAAAAAUA=</HashCode>
+      <FileName>Assets\Scripts\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraSetup" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CameraSetup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Coin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CoinPun" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CoinPun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ColorSerialization" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ColorSerialization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAACKAAoBChAAAAACAAAAAGAgAAAAAiDAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyPun" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAACKAAoBChAAAAACAAAAAEAkEAAAAiDAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\EnemyPun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemySpawner" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgYQIAAAAAABCAAAAAAAAAAAAAACAAgBAAgAAIIAIAA=</HashCode>
+      <FileName>Assets\Scripts\EnemySpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemySpawnerPun" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgYQIAAAAAIBCAAAAAAAQAAABAACAAgBAAgABAIAIEA=</HashCode>
+      <FileName>Assets\Scripts\EnemySpawnerPun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAgDEAAAAAAAAIEAAAAAFAwAAJAIAAAAAQAsA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManagerPun" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgDEAAAAAAAAIQAAAAAFAgCANAIAAAAAQAsA=</HashCode>
+      <FileName>Assets\Scripts\GameManagerPun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Gun" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAgACAACAAAAAAAAAMAIAAAAQQAAEBAkA=</HashCode>
+      <FileName>Assets\Scripts\Gun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GunPun" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAgAAAgACAACAAQAACAAAMAIAAAAQQAAEBAkA=</HashCode>
+      <FileName>Assets\Scripts\GunPun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HealthPack" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\HealthPack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HealthPackPun" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\HealthPackPun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ItemSpawner" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQgAACAAAAAAAAkAAAAAAAAAAAAAACAQBAAAgAg=</HashCode>
+      <FileName>Assets\Scripts\ItemSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemSpawnerPun" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQgAACAAAAAAAAkAAAAAAAAAAAAAACAABAAAgAg=</HashCode>
+      <FileName>Assets\Scripts\ItemSpawnerPun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelUp" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAIAAAAAAEAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\LevelUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LivingEntity" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgQAAAAABAAACAAAAIAAAACAAACAg=</HashCode>
+      <FileName>Assets\Scripts\LivingEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LivingEntityPun" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgQAAAAABAAACAAAAIAAAQCAAACAg=</HashCode>
+      <FileName>Assets\Scripts\LivingEntityPun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LobbyManager" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAEAAAIAAAAAAAAAIEACAEAAAAII=</HashCode>
+      <FileName>Assets\Scripts\LobbyManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerHealth" Collapsed="true">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAlAABAgQAAEQAAAABAAAAAARAAACIAACEA=</HashCode>
+      <FileName>Assets\Scripts\PlayerHealth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerHealthPun" Collapsed="true">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAlAEAAgSAAAQAAAABAAAAAARAAACIAACEA=</HashCode>
+      <FileName>Assets\Scripts\PlayerHealthPun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerInput" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEBAAAAAAACAAAAQAAAAAAAAAAAABAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerInputPun" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEBAAAAAAACAAAAQAAAAAAAAAAAABAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerInputPun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerLevel" Collapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgBAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\PlayerLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerLevelPun" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgBAAAAAIAAAAAAAAIAAAAAABAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\PlayerLevelPun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMovement" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAEqAAAAAAAAAAQAAAEBAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMovementPun" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAEqAAAAAAAAAAQAAAEBAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerMovementPun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerShooter" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAGAAAAAAAAAAQAAAABAAAAAIAAAEQAAACAg=</HashCode>
+      <FileName>Assets\Scripts\PlayerShooter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerShooterPun" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAGAAAAAAAAgAAAAAABAAAAAIAAAEQAAACAg=</HashCode>
+      <FileName>Assets\Scripts\PlayerShooterPun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResolutionManager" Collapsed="true">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAABCAAAAAAAAABDAAAAAQBgAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\ResolutionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rotator" Collapsed="true">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Rotator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Stat" Collapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAIAACAAEAAAAAAAAQAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Stat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatData" Collapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAQAAAAAAAAAAAAAgAAAEAAAAABAAAABAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\StatData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Title" Collapsed="true">
+    <Position X="18.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Title.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIManager" Collapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAQAEAoAQAgABAAAAAAAQFAAgAIAAAAEAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IDamageable" Collapsed="true">
+    <Position X="9.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\IDamageable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IItem" Collapsed="true">
+    <Position X="11.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\IItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

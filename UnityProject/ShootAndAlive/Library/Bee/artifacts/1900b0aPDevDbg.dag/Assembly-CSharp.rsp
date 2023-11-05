@@ -347,8 +347,6 @@
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/Scripts/AudioManager.cs"
 "Assets/Scripts/CameraSetup.cs"
-"Assets/Scripts/Coin.cs"
-"Assets/Scripts/CoinPun.cs"
 "Assets/Scripts/ColorSerialization.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/EnemyPun.cs"
